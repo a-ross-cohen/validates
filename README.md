@@ -13,34 +13,35 @@ $('#id').validates('format', /^awesome$/i )
 All built in validators will return true or false with proper arguments. They will return undefined with improper arguments.
 - value
   - presence
-    - non-blank
+    * non-blank
   - alpha
-    - only letters
+    * only letters
   - numeric
-    - only numbers
+    * only numbers
   - alphanumeric
-    - only letters and/or numbers
+    * only letters and/or numbers
   - email
-    - only properly formatted emails
+    * only properly formatted emails
   - url
-    - only properly formatted urls
+    * only properly formatted urls
   - length, Number
-    - length is exactly Number
+    * length is exactly Number
   - min_length, Number
-    - length is equal to or greater than Number
+    * length is equal to or greater than Number
   - max_length, Number
-    - length is equal to or less than Number
+    * length is equal to or less than Number
   - format, RegExp
-    - format matches RegExp
+    * format matches RegExp
   - inclusion, Array
-    - exists in Array
+    * exists in Array
   - exclusion
-    - does not exist in Array
+    * does not exist in Array
 - checked
   - acceptance
-    - checked or non-blank
+    * checked or non-blank
   - rejection
-    - nonexistent
+    * nonexistent
+
 ####Using custom validators
 You can define your own validators and add them to the $.validators object. They can be called by the key that you define them on, and the only requirement is that they are functions who return true or false. The first argument will always be the element you're validating, and the rest of the arguments are passed on from the call to validates().
 ```javascript
