@@ -34,7 +34,7 @@ All built in validators will return true or false with proper arguments. They wi
         * format matches RegExp
     - inclusion, Array
         * exists in Array
-    - exclusion
+    - exclusion, Array
         * does not exist in Array
 - checked
     - acceptance
@@ -46,11 +46,7 @@ All built in validators will return true or false with proper arguments. They wi
 You can define your own validators and add them to the $.validators object. They can be called by the key that you define them on, and the only requirement is that they are functions who return true or false. The first argument will always be the element you're validating, and the rest of the arguments are passed on from the call to validates().
 ```javascript
 $.validators['awesomeness'] = function( element, repetitions ) {
-  if ( element.val().match( /awesome/g ).length == repetitions ) {
-    return true
-  } else {
-    return false
-  }
+   return element.val().match( /awesome/g ).length == repetitions
 }
 // this can be called just like any of the built-in validators
 $('#id').validates('awesomeness', 3) // would return true if the value was "awesome awesome awesome"
